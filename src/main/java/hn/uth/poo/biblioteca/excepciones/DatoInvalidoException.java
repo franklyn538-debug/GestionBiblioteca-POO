@@ -8,6 +8,8 @@ package hn.uth.poo.biblioteca.excepciones;
  *
  * @author frank
  */
-public class DatoInvalidoException {
-    
+public class DatoInvalidoException extends RuntimeException {
+    public DatoInvalidoException(String message) {
+        super(message);
+    }
 }

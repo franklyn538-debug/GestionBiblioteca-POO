@@ -8,6 +8,8 @@ package hn.uth.poo.biblioteca.excepciones;
  *
  * @author frank
  */
-public class DatosException {
-    
+public class DatosException extends RuntimeException {
+    public DatosException(String message, Throwable cause) {
+        super(message, cause);
+    }
 }
