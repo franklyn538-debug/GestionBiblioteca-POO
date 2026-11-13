@@ -12,49 +12,84 @@ public class Libro {
     private int id;
     private String isbn;
     private String titulo;
-    private int anio;
-    private double precio;
-    private int autorId;
+    private int anioPublicacion;
+    private boolean disponible;
+    private Autor autor;
 
-    public Libro() {}
+    // Constructor vacio
+    public Libro() {
+    }
 
-    public Libro(int id, String isbn, String titulo, int anio, double precio, int autorId) {
+    // Constructor sin ID (para insertar)
+    public Libro(String isbn, String titulo, int anioPublicacion, boolean disponible, Autor autor) {
+        this.isbn = isbn;
+        this.titulo = titulo;
+        this.anioPublicacion = anioPublicacion;
+        this.disponible = disponible;
+        this.autor = autor;
+    }
+
+    // Constructor completo (para consultar)
+    public Libro(int id, String isbn, String titulo, int anioPublicacion, boolean disponible, Autor autor) {
         this.id = id;
         this.isbn = isbn;
         this.titulo = titulo;
-        this.anio = anio;
-        this.precio = precio;
-        this.autorId = autorId;
+        this.anioPublicacion = anioPublicacion;
+        this.disponible = disponible;
+        this.autor = autor;
     }
 
-    public Libro(String isbn, String titulo, int anio, double precio, int autorId) {
+    // Getters y Setters
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
-        this.titulo = titulo;
-        this.anio = anio;
-        this.precio = precio;
-        this.autorId = autorId;
     }
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public String getTitulo() {
+        return titulo;
+    }
 
-    public String getIsbn() { return isbn; }
-    public void setIsbn(String isbn) { this.isbn = isbn; }
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
 
-    public String getTitulo() { return titulo; }
-    public void setTitulo(String titulo) { this.titulo = titulo; }
+    public int getAnioPublicacion() {
+        return anioPublicacion;
+    }
 
-    public int getAnio() { return anio; }
-    public void setAnio(int anio) { this.anio = anio; }
+    public void setAnioPublicacion(int anioPublicacion) {
+        this.anioPublicacion = anioPublicacion;
+    }
 
-    public double getPrecio() { return precio; }
-    public void setPrecio(double precio) { this.precio = precio; }
+    public boolean isDisponible() {
+        return disponible;
+    }
 
-    public int getAutorId() { return autorId; }
-    public void setAutorId(int autorId) { this.autorId = autorId; }
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+
+    public void setAutor(Autor autor) {
+        this.autor = autor;
+    }
 
     @Override
     public String toString() {
-        return "Libro [ID=" + id + ", ISBN=" + isbn + ", Título=" + titulo + ", Año=" + anio + ", Precio=" + precio + ", AutorID=" + autorId + "]";
+        return titulo + " (" + anioPublicacion + ")";
     }
 }
